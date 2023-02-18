@@ -1,6 +1,6 @@
 import 'dart:io';
 void main(){
-
+  evenOrOdd();
   // choiceUser();
 }
 choiceUser(){
@@ -60,48 +60,24 @@ arrayDivision(){
   chooseAgain();
 }
 evenOrOdd(){
-  print("Digite 10 valores para separar por par ou impar:");
-  print("Digite o primeiro número:");
-  int numberOne = int.parse(stdin.readLineSync()!);
-  print("Digite o segundo número:");
-  int numberTwo = int.parse(stdin.readLineSync()!);
-  print("Digite o terceiro número:");
-  int numberThird = int.parse(stdin.readLineSync()!);
-  print("Digite o quarto número:");
-  int numberFourth = int.parse(stdin.readLineSync()!);
-  print("Digite o quinto número:");
-  int numberFifth = int.parse(stdin.readLineSync()!);
-  print("Digite o sesto número:");
-  int numberSixth = int.parse(stdin.readLineSync()!);
-  print("Digite o setimo número:");
-  int numberSeventh  = int.parse(stdin.readLineSync()!);
-  print("Digite o oitavo número:");
-  int numberEighth = int.parse(stdin.readLineSync()!);
-  print("Digite o nono número:");
-  int numberNineth = int.parse(stdin.readLineSync()!);
-  print("Digite o decimo número:");
-  int numberTenth = int.parse(stdin.readLineSync()!);
+  var numbers = [];
   var numberEven = [];
   var numberOdd = [];
-  var numbers = [];
-  numbers.add(numberOne);
-  numbers.add(numberTwo);
-  numbers.add(numberThird);
-  numbers.add(numberFourth);
-  numbers.add(numberFifth);
-  numbers.add(numberSixth);
-  numbers.add(numberSeventh);
-  numbers.add(numberEighth);
-  numbers.add(numberNineth);
-  numbers.add(numberTenth);
-  
+  print("Digite 10 valores para separar por par ou impar:");
   for(int i = 0; i < 10; i++){
+    print("Digite um número:");
+    int number = int.parse(stdin.readLineSync()!);
+    numbers.add(number);
     if(numbers[i] % 2 == 1){
       numberEven.add(numbers[i]);
+      print("impares[${numberEven.length-1}] = ${numberEven[numberEven.length-1]}");
     } else {
       numberOdd.add(numbers[i]);
+      print("pares[${numberOdd.length-1}] = ${numberOdd[numberOdd.length-1]}");
     }
   }
+  print("*******************************");
+  print("Numeros $numbers");
   print("Impares $numberEven");
   print("Pares $numberOdd");
   chooseAgain();
