@@ -1,7 +1,7 @@
 import 'dart:io';
+import 'dart:math';
 void main(){
-  evenOrOdd();
-  // choiceUser();
+  choiceUser();
 }
 choiceUser(){
   print("Digite o número da atividade");
@@ -21,7 +21,7 @@ choiceUser(){
       evenOrOdd();
       break;
     case "4":
-
+      randomNumbers();
       break;
     default:
     chooseAgain();
@@ -80,5 +80,16 @@ evenOrOdd(){
   print("Numeros $numbers");
   print("Impares $numberEven");
   print("Pares $numberOdd");
+  chooseAgain();
+}
+randomNumbers(){
+  var numbers = List.generate(100, (_) => Random().nextInt(100)-50);
+  print("Números gerados\n$numbers");
+  print("Números menores ou iguais que 10 são...");
+  for(int i = 0; i < numbers.length; i++){
+    if(numbers[i] <= 10){
+      print("Número[${i}] = ${numbers[i]}");
+    }
+  }
   chooseAgain();
 }
